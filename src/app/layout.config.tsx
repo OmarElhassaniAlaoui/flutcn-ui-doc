@@ -19,15 +19,34 @@ export const baseOptions: BaseLayoutProps = {
         >
           <circle cx={12} cy={12} r={12} fill="currentColor" />
         </svg>
-        My App
+        Flutcn-ui
       </>
     ),
+    children: [
+      
+    ],
   },
   links: [
     {
-      text: 'Documentation',
+      text: 'Docs',
       url: '/docs',
       active: 'nested-url',
     },
+    {
+      text:'Components' , 
+      url: '/components',
+      active: 'nested-url',
+    }, 
+    {
+      text: 'Examples',
+      url: '/examples',
+      active: 'nested-url',
+    },
+    {
+      text: 'Themes',
+      url: '/themes',
+      active: 'nested-url',
+    },
+   
   ],
 };

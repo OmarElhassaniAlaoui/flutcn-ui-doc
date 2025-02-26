@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button" 
 import { Github, Twitter, Copy, Check, ChevronRight } from "lucide-react"
+import { AnimatedShinyText } from '@/components/ui/animated-shiny-text';
 
 export default function HomePage() {
   const [copied, setCopied] = useState(false)
@@ -18,9 +19,10 @@ export default function HomePage() {
     <main className="flex-1">
     <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
       <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
-        <Link href="/docs" className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium">
+        {/* <Link href="/docs" className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium">
           Introducing flutcn-ui 1.0
-        </Link>
+        </Link> */}
+        <AnimatedShinyText>Introducing flutcn-ui 1.0</AnimatedShinyText>
         <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">Beautiful Flutter components</h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
           Beautifully designed components for your Flutter apps. Open source. Customizable. For developers and

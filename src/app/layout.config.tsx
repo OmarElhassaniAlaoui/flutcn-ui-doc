@@ -31,20 +31,10 @@ export const baseOptions: BaseLayoutProps = {
       url: "/docs",
       active: "nested-url",
     },
-    {
-      text: "Components",
-      url: "/components",
-      active: "nested-url",
-    },
-    {
-      text: "Examples",
-      url: "/examples",
-      active: "nested-url",
-    },
-    {
-      text: "Themes",
-      url: "/themes",
-      active: "nested-url",
-    },
+    // {
+    //   text: "Components",
+    //   url: "/docs/components",
+    //   active: "nested-url",
+    // },
   ],
 };

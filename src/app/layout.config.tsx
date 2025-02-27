@@ -1,4 +1,4 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 
 /**
  * Shared layout configurations
@@ -8,6 +8,8 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
  * Docs Layout: app/docs/layout.tsx
  */
 export const baseOptions: BaseLayoutProps = {
+  githubUrl: "https://github.com/OmarElhassaniAlaoui/Optimos-DE",
+
   nav: {
     title: (
       <>
@@ -22,31 +24,27 @@ export const baseOptions: BaseLayoutProps = {
         Flutcn-ui
       </>
     ),
-    children: [
-      
-    ],
   },
   links: [
     {
-      text: 'Docs',
-      url: '/docs',
-      active: 'nested-url',
+      text: "Docs",
+      url: "/docs",
+      active: "nested-url",
     },
     {
-      text:'Components' , 
-      url: '/components',
-      active: 'nested-url',
-    }, 
-    {
-      text: 'Examples',
-      url: '/examples',
-      active: 'nested-url',
+      text: "Components",
+      url: "/components",
+      active: "nested-url",
     },
     {
-      text: 'Themes',
-      url: '/themes',
-      active: 'nested-url',
+      text: "Examples",
+      url: "/examples",
+      active: "nested-url",
     },
-   
+    {
+      text: "Themes",
+      url: "/themes",
+      active: "nested-url",
+    },
   ],
 };

@@ -2,9 +2,6 @@
 title: Getting Started
 description: Learn how to install and use Flutcn-ui in your Flutter projects.
 ---
-
-
-
 ## Installing Flutcn-ui
 
 To install Flutcn-ui, add it as a dependency in your `pubspec.yaml` file:
@@ -13,76 +10,13 @@ To install Flutcn-ui, add it as a dependency in your `pubspec.yaml` file:
 dependencies:
   flutcn_ui: ^1.0.0
 ```
+To start using Flutcn, install the CLI tool:
 
-## Using Flutcn-ui
+```sh
+dart pub global activate flutcn_cli
+``` 
+Then, install a widget using:
 
-Once you have installed Flutcn-ui, you can start using its widgets in your Flutter app. Here's an example of how to use the FlutcnButton widget:
-
-```dart
-import 'package:flutcn_ui/flutcn_ui.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutcn-ui Demo',
-      home: Scaffold(
-        body: Center(
-          child: FlutcnButton(
-            onPressed: () {},
-            child: Text('Hello flutcn-ui'),
-          ),
-        ),
-      ),
-    );
-  }
-}
-```
-
-In this example, we import the FlutcnButton widget from the flutcn_ui package and use it in our app. The FlutcnButton widget is a beautiful button that you can customize with various properties, such as its color, size, and shape.
-
-## Customizing Flutcn-ui
-
-Flutcn-ui is highly customizable, allowing you to create your own unique button designs. Here's an example of how to customize the FlutcnButton widget:
-
-```dart
-import 'package:flutcn_ui/flutcn_ui.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutcn-ui Demo',
-      home: Scaffold(
-        body: Center(
-          child: FlutcnButton(
-            onPressed: () {},
-            child: Text('Hello flutcn-ui'),
-            style: FlutcnButtonStyle(
-              backgroundColor: Colors.purple,
-              foregroundColor: Colors.white,
-              padding: EdgeInsets.symmetric(
-                horizontal: 24,
-                vertical: 12,
-              ),
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+```sh
+flutcn add <widget-name>
 ```

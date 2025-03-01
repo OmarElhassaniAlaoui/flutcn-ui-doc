@@ -50,7 +50,7 @@ export default function HomePage() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/components">Components</Link>
+              <Link href="/docs/components">Components</Link>
             </Button>
           </div>
         </div>

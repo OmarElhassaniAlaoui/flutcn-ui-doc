@@ -1,0 +1,14 @@
+{
+    "root":true , 
+    "pages":[
+        "index",
+        "gettingstarted",
+
+        "---Components---",
+        "...components",
+
+        "---Themes---",
+        "...themes"
+
+    ]
+}

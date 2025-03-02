@@ -5,12 +5,14 @@ import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { ArrowRightIcon, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
+import { Spotlight } from "@/components/ui/spotlight-new";
 
 export default function HomePage() {
   return (
-    <main className="flex-1">
+    <main className="flex-1 overflow-hidden">
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
-        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
+        <div className="container flex max-w-screen flex-col items-center gap-4 text-center">
+          <Spotlight />
           <div
             className={cn(
               "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
@@ -36,12 +38,12 @@ export default function HomePage() {
               </AnimatedGradientText>
             </Link>
           </div>
-          <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            Beautiful Flutter components
+          <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+            Beautiful Flutter Components <br /> For Elegant Apps
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            Beautifully designed components for your Flutter apps. Open source.
-            Customizable. For developers and designers.
+            A Flutter component library inspired by shadcn/ui that helps you
+            build beautiful user interfaces with minimal effort.
           </p>
           <div className="space-x-4">
             <Button asChild size="lg" className="gap-1">
@@ -55,6 +57,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+     
     </main>
   );
 }

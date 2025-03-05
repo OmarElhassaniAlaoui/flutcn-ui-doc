@@ -6,16 +6,16 @@ import { ArrowRightIcon, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 import { Spotlight } from "@/components/ui/spotlight-new";
+import  Footer  from "@/components/layout/footer";
 
 export default function HomePage() {
   return (
-    <main className="flex-1 overflow-hidden">
+    <main className="flex-1  h-screen">
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
         <div className="container flex max-w-screen flex-col items-center gap-4 text-center">
-          <Spotlight />
           <div
             className={cn(
-              "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+              "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
             )}
           >
             {/* <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
@@ -29,7 +29,7 @@ export default function HomePage() {
                 🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
                 <span
                   className={cn(
-                    `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+                    `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
                   )}
                 >
                   Introducing Flutcn UI
@@ -57,7 +57,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-     
+        <Footer/>
     </main>
   );
 }

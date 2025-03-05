@@ -1,17 +1,36 @@
+import Link from 'next/link';
 import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-neutral-900">
-        <div className="container flex flex-col items-center justify-center gap-4 py-8 text-center">
-            <p className="text-muted-foreground text-sm">
-                &copy; {new Date().getFullYear()} Flutcn UI. All rights reserved.
-
-            </p>
-
+    <footer className="border-grid border-t py-6 md:px-8 md:py-0">
+      <div className="container-wrapper">
+        <div className="container py-4">
+          <div className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
+            Built by{" "}
+            <Link
+              href={""}
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium underline underline-offset-4"
+            >
+              Omar elhassani alaoui
+            </Link>
+            . The source code is available on{" "}
+            <Link
+              href={""}
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium underline underline-offset-4"
+            >
+              GitHub
+            </Link>
+            .
+          </div>
         </div>
+      </div>
     </footer>
   )
 }
 
-export default Footer
+export default Footer ; 

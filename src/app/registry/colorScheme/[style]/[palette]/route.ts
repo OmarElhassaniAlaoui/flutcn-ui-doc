@@ -1,22 +1,20 @@
 import fs from "fs";
 import path from "path";
-import { NextResponse } from "next/server";
+import { NextResponse } from "next/server"; 
 
 export async function GET(
   req: Request,
-  context: { params: Promise<{ style: string; name: string }> } 
+  context: { params: Promise<{ palette: string , style: string }> }
 ) {
   const params = await context.params; // Await the params
-  const { style, name } = params;
-  console.log("Style:", style, "Name:", name); // Debug log
+  const { palette , style } = params;
+  console.log("Palette:", palette); // Debug log
 
-  const filePath = path.join(process.cwd(), "registry", `${style}/widgets/${name}.dart`); 
-
-  
+  const filePath = path.join(process.cwd(), "registry", `${style}/themes/${palette}/app_palette.dart`);
 
   try {
     if (!fs.existsSync(filePath)) {
-      return NextResponse.json({ error: "Widget not found" }, { status: 404 });
+      return NextResponse.json({ error: "Color scheme not found" }, { status: 404 });
     }
 
     const fileContent = fs.readFileSync(filePath, "utf-8");

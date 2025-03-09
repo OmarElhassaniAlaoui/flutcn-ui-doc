@@ -4,13 +4,13 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   req: Request,
-  context: { params: Promise<{ palette: string , style: string }> }
+  context: { params: Promise<{  style: string }> }
 ) {
   const params = await context.params; // Await the params
-  const { palette , style } = params;
-  console.log("Palette:", palette); // Debug log
+  const { style } = params;
+  // Debug log
 
-  const filePath = path.join(process.cwd(), "registry", `${style}/color-scheme/${palette}/app_palette.dart`);
+  const filePath = path.join(process.cwd(), "registry", `${style}/app_theme.dart`);
 
   try {
     if (!fs.existsSync(filePath)) {

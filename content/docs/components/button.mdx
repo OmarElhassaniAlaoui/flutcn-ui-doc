@@ -1,15 +1,56 @@
 ---
 title: Button 
-description: Test Button
+description:  Displays a button or a component that looks like a button.
 ---
 
-# Test  
-```tsx
-import { Button } from 'flutcn-ui'
+# Installation 
 
-const MyButton = () => {
-  return (
-    <Button>Hello flutcn-ui</Button>
-  )
+```bash
+flutcn_ui add button
+```
+
+# Usage
+
+```dart 
+import '../widgets/button.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Button'),
+        ),
+        body: Center(
+          child: Button(
+            text: 'Click me',
+            onPressed: () {
+              print('Clicked');
+            },
+          ),
+        ),
+      ),
+    );
+  }
 }
 ```
+
+## Properties
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| text | String | The text to display on the button. |
+| onPressed | Function | The function to call when the button is pressed. |
+| variant | ButtonVariant | The variant of the button. |
+| leadingIcon | Widget | The leading icon of the button. |
+| trailingIcon | Widget | The trailing icon of the button. |
+| isDisabled | bool | Whether the button is disabled. |
+| isLoading | bool | Whether the button is loading. |
+
+
+

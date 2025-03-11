@@ -1,0 +1,26 @@
+---
+title: Dark Theme
+description:  Adding dark mode to your App
+---
+## setup
+```dart
+ import "./themes/app_theme.dart";// [!code highlight]
+
+ void main() {
+   runApp(MyApp());
+ }
+
+
+ class MyApp extends StatelessWidget {
+   @override
+   Widget build(BuildContext context) {
+     return MaterialApp(
+       title: 'Flutter Demo',
+       theme: FlutcnTheme.darkTheme(), // [!code highlight]
+       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+     );
+   }
+ }
+```
+## Note 
+press hot reload and you will see the dark theme applied to your app. 

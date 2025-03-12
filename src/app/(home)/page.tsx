@@ -10,7 +10,7 @@ import  Footer  from "@/components/layout/footer";
 
 export default function HomePage() {
   return (
-    <main className="flex-1  h-screen">
+    <main className="flex-1">
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
         <div className="container flex max-w-screen flex-col items-center gap-4 text-center">
           <div
@@ -18,12 +18,6 @@ export default function HomePage() {
               "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
             )}
           >
-            {/* <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-              <Link href="/docs" className="flex items-center gap-1">
-                <span>✨ Introducing Flutcn UI</span>
-                <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-              </Link>
-            </AnimatedShinyText> */}
             <Link href="/docs" className="flex items-center gap-1">
               <AnimatedGradientText>
                 🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
@@ -39,10 +33,10 @@ export default function HomePage() {
             </Link>
           </div>
           <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-            Beautiful Flutter Components <br /> For Elegant Apps
+            Beautiful Flutter Widgets <br /> For Elegant Apps
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            A Flutter component library inspired by shadcn/ui that helps you
+            A Flutter widgets library inspired by shadcn/ui that helps you
             build beautiful user interfaces with minimal effort.
           </p>
           <div className="space-x-4">
@@ -52,12 +46,12 @@ export default function HomePage() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/docs/components">Components</Link>
+              <Link href="/docs/widgets">Widgets</Link>
             </Button>
           </div>
         </div>
       </section>
-        <Footer/>
+      <Footer/>
     </main>
   );
 }

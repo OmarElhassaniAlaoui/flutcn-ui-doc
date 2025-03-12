@@ -21,9 +21,9 @@ export const {docs , meta} = defineDocs({
   }
 });
 
-export const components = defineCollections({
+export const widgets = defineCollections({
   type: "doc",
-  dir: "content/components",
+  dir: "content/widgets",
 });
 
 

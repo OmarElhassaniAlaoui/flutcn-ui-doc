@@ -15,8 +15,8 @@ export const source = loader({
   },
 });
 
-export const components = loader({
-  baseUrl: "/docs/components",
+export const widgets = loader({
+  baseUrl: "/docs/widgets",
   source: createMDXSource(docs, meta),
   icon(icon) {
     if (!icon) {

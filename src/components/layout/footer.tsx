@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
             Built by{" "}
             <Link
-              href={""}
+              href={"https://github.com/OmarElhassaniAlaoui"}
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
@@ -18,7 +18,7 @@ const Footer = () => {
             </Link>
             . The source code is available on{" "}
             <Link
-              href={""}
+              href={"https://github.com/OmarElhassaniAlaoui/flutcn_ui"}
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"

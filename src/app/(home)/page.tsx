@@ -10,8 +10,7 @@ import  Footer  from "@/components/layout/footer";
 
 export default function HomePage() {
   return (
-    <main className="flex-1">
-      <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
+      <section className="h-96 space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
         <div className="container flex max-w-screen flex-col items-center gap-4 text-center">
           <div
             className={cn(
@@ -51,7 +50,5 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <Footer/>
-    </main>
   );
 }

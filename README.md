@@ -1,4 +1,4 @@
-# Flutcn UI CLI
+# Flutcn UI
 
 ![Dart](https://img.shields.io/badge/Dart-3.6.2-blue.svg) ![License](https://img.shields.io/badge/License-MIT-green.svg) ![GitHub](https://img.shields.io/github/stars/OmarElhassaniAlaoui/flutcn_ui)
 

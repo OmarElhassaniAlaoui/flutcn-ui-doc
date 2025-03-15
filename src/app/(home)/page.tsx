@@ -6,7 +6,7 @@ import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
 
 export default function HomePage() {
   return (
-    <section className="min-h-screen pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
+    <main className="flex flex-col items-center justify-center min-h-96 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
       
       <div className="container flex max-w-screen flex-col items-center gap-4 text-center">
         <div
@@ -46,6 +46,6 @@ export default function HomePage() {
           </Button>
         </div>
       </div>
-    </section>
+    </main>
   );
 }

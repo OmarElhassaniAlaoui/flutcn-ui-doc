@@ -7,15 +7,38 @@ icon: Rocket
 
 To install Flutcn-ui, add it as a dependency in your `pubspec.yaml` file:
 
+```bash
+flutter pub add flutcn_ui
+```
+that's will add the following dependency to your `pubspec.yaml` file:
+
 ```yaml
 dependencies:
   flutcn_ui: ^1.0.5
 ```
+
+## Using Flutcn-ui
+
 To start using Flutcn, install the CLI tool:
 
 ```sh
 dart pub global activate flutcn_ui
 ``` 
+
+setup ```flutcn_ui``` in yout project using:
+```bash 
+flutcn init
+```
+that will ask to choose the path where flutcn can create the widgets and themes, and will create a ```flutcn.config.js``` file in the root of your project.
+
+```bash 
+flutcn init
+Which path do you choose for theme ? (lib/themes)
+Which path do you choose for widgets ? (lib/widgets)
+Which style do you want to use? (new-york | default)
+Which color scheme do you want to use? (zinc)
+```
+
 Then, install a widget using:
 
 ```sh

@@ -1,0 +1,111 @@
+---
+title: Avatar 
+description: An image element with a fallback for representing the user. 
+---
+
+# Installation 
+
+```bash
+flutcn_ui add avatar
+```
+
+# Usage
+
+```dart title="main.dart"
+import '../widgets/avatar.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),        
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Avatar'),
+        ),
+        body: Center(
+          child: Avatar.sm(
+            imageUrl: 'https://avatars.githubusercontent.com/u/101595?v=4',
+            fallbackText: 'Avatar',
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+## Properties
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| imageUrl | String | The URL of the image to display. |
+| fallbackText | String | The fallback text to display if the image is not available. |
+| size | AvatarSize | The size of the avatar. |
+| backgroundColor | Color | The background color of the avatar. |
+| textColor | Color | The text color of the avatar. |
+| textStyle | TextStyle | The text style of the avatar. |
+| borderRadius | BorderRadius | The border radius of the avatar. |
+| shape | BoxShape | The shape of the avatar. |
+| child | Widget | The child widget of the avatar. |
+| borderWidth | double | The border width of the avatar. |
+| borderColor | Color | The border color of the avatar. |
+
+## Sizes
+
+Avatar provides several sizes of avatars, each with its own appearance and behavior. You can choose the size that best suits your needs.
+
+### Sm
+
+The sm size is the smallest size of the avatar. It has a width of 24 and a height of 24.
+
+### Md
+
+The md size is the default size of the avatar. It has a width of 32 and a height of 32.
+
+### Lg
+
+The lg size is the largest size of the avatar. It has a width of 40 and a height of 40.
+
+### Xl
+
+The xl size is the extra large size of the avatar. It has a width of 48 and a height of 48.
+
+### Custom       
+
+The custom size allows you to customize the size of the avatar. You can set the width and height to create a unique avatar design.  
+
+```dart title="avatar.dart"
+import 'package:flutter/material.dart';
+
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Avatar'),
+        ),
+        body: Center(
+          child: Avatar.custom(
+            imageUrl: 'https://avatars.githubusercontent.com/u/101595?v=4',
+            fallbackText: 'FL',
+            borderColor: Colors.amberAccent,
+            shape: BoxShape.circle,
+            borderWidth: 2,
+            size: 100,
+          ),
+        ),
+      ),
+    );
+  }
+}
+``` 

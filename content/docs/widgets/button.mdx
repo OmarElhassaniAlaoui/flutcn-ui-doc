@@ -27,12 +27,11 @@ class MyApp extends StatelessWidget {
           title: const Text('Button'),
         ),
         body: Center(
-          child: Button(
-            text: 'Click me',
-            variant: ButtonVariant.primary,
-            onPressed: () {
-              print('Clicked');
-            },
+          child: Button.primary(
+          height: 60,
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: const Text('primary'),
+          onPressed: () {},
           ),
         ),
       ),
@@ -52,6 +51,103 @@ class MyApp extends StatelessWidget {
 | trailingIcon | Widget | The trailing icon of the button. |
 | isDisabled | bool | Whether the button is disabled. |
 | isLoading | bool | Whether the button is loading. |
+| height | double | The height of the button. |
+| width | double | The width of the button. |
+| padding | EdgeInsets | The padding of the button. |
+| borderRadius | double | The border radius of the button. |
+| elevation | double | The elevation of the button. |
+| hoverElevation | double | The hover elevation of the button. |
+| pressedElevation | double | The pressed elevation of the button. |
+| disabledElevation | double | The disabled elevation of the button. |
+| borderColor | Color | The border color of the button. |
+| borderWidth | double | The border width of the button. |
+| backgroundColor | Color | The background color of the button. |
+| foregroundColor | Color | The foreground color of the button. |
+| hoverBackgroundColor | Color | The hover background color of the button. |
+| pressedBackgroundColor | Color | The pressed background color of the button. |
+| disabledBackgroundColor | Color | The disabled background color of the button. |
+| disabledForegroundColor | Color | The disabled foreground color of the button. |
+| loadingIndicatorColor | Color | The loading indicator color of the button. |
+| fontSize | double | The font size of the button. |
+| fontWeight | FontWeight | The font weight of the button. |
+| animationDuration | Duration | The animation duration of the button. |
+| animationCurve | Curve | The animation curve of the button. |
+| shape | BoxShape | The shape of the button. |
+| gradient | Gradient | The gradient of the button. |
+| boxShadow | | The box shadow of the button. |
+| loadingSize | double | The loading size of the button. |
+| overlayColor | Color | The overlay color of the button. |
+
+## Variants
+
+FlutButton provides several variants of buttons, each with its own appearance and behavior. You can choose the variant that best suits your needs.
+
+### Primary
+
+The primary variant is the default variant of the button. It has a background color, a foreground color, and a border color. It is typically used for the most important or the most common action.
+
+### Secondary
+
+The secondary variant has a background color, a foreground color, and a border color. It is typically used for less important or less common actions.
+
+### Outline
+
+The outline variant has a background color, a foreground color, and a border color. It is typically used for less important or less common actions.
+
+### Ghost
+
+The ghost variant has a background color, a foreground color, and a border color. It is typically used for less important or less common actions.
+
+### Link
+
+The link variant has a background color, a foreground color, and a border color. It is typically used for less important or less common actions.
+
+### Destructive
+
+The destructive variant has a background color, a foreground color, and a border color. It is typically used for less important or less common actions.
+
+### Custom
+
+The custom variant allows you to customize the appearance and behavior of the button. You can set the background color, foreground color, border color, and other properties to create a unique button design.
+
+## Sizes
+
+FlutButton provides several sizes of buttons, each with its own appearance and behavior. You can choose the size that best suits your needs.
+
+### Sm
+
+The sm size is the smallest size of the button. It has a height of 32 and a font size of 14.
+
+### Md
+
+The md size is the default size of the button. It has a height of 40 and a font size of 16.
+
+### Lg
+
+The lg size is the largest size of the button. It has a height of 48 and a font size of 18.
+
+### Icon
+
+The icon size is the size of the button when it only contains an icon. It has a height of 40 and a font size of 16.
+
+### Custom
+
+The custom size allows you to customize the size of the button. You can set the height and font size to create a unique button design.
+
+## Icons
+
+You can use icons in FlutButton to provide visual feedback or indicate the purpose of the button. You can use any icon from the Material Icons library or your own custom icons.
+
+To use icons in FlutButton, you can pass the icon as a parameter to the button. You can also use the iconOnly property to display only the icon without any text.
+
+```dart
+Button.primary(
+  icon: Icons.add,
+  iconOnly: true,
+  onPressed: () {},
+),
+``` 
+
 
 
 

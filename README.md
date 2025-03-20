@@ -13,7 +13,7 @@
 - [ ] [Alert](#)
 - [ ] [Breadcrumb](#)
 - [ ] [Dialog](#)
-- [ ] [Avatar](#)
+- [x] [Avatar](#)
 - [ ] [Badge](#)
 - [ ] [IconButton](#)
 - [ ] [Calendar](#)

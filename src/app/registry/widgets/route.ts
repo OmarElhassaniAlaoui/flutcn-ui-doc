@@ -1,11 +1,10 @@
-// src/app/api/widgets/route.ts
 import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
 export async function GET() {
   const registryPath = path.join(process.cwd(), 'registry');
-  const styles = ['default', 'new-york']; // Add more styles as needed
+  const styles = ['default', 'new-york']; 
 
   try {
     const widgetList = await Promise.all(
@@ -23,7 +22,6 @@ export async function GET() {
       })
     );
 
-    // Flatten the array of widget arrays into a single list
     const allWidgets = widgetList.flat();
 
     return NextResponse.json({

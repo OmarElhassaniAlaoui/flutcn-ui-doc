@@ -15,7 +15,7 @@ export async function GET() {
           .filter((file) => file.endsWith(".dart"))
           .map((file) => ({
             name: file.replace(".dart", ""),
-            link: `/registry/widgets/${style}/${file.replace(".dart", "")}`,
+            link: `/${style}/${file.replace(".dart", "")}`,
             style,
           }));
         return widgets;

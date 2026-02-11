@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import './app_pallete.dart';
-// Enum for all available color schemes
-
 
 class FlutcnTheme {
   // Default border radius values
   static const double _radiusSmall = 4.0;
   static const double _radiusDefault = 8.0;
   static const double _radiusLarge = 12.0;
-  static const double _radiusXL = 16.0;
 
-  // Animation duration
-  static const Duration _animationDuration = Duration(milliseconds: 200);
   static final colorScheme = AppPalette.colors;
   
 
@@ -46,7 +40,7 @@ class FlutcnTheme {
         error: error,
         onError: onError,
       ),
-      textTheme: GoogleFonts.interTextTheme(),
+      textTheme: const TextTheme(),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: primary,
@@ -105,7 +99,7 @@ class FlutcnTheme {
           borderSide: BorderSide(color: error, width: 2),
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: background,
         elevation: 1,
         shape: RoundedRectangleBorder(
@@ -156,13 +150,13 @@ class FlutcnTheme {
         foregroundColor: onBackground,
         elevation: 0,
         centerTitle: false,
-        titleTextStyle: GoogleFonts.inter(
+        titleTextStyle: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w600,
           color: onBackground,
         ),
       ),
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         backgroundColor: background,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(_radiusLarge),
@@ -235,7 +229,7 @@ class FlutcnTheme {
         error: error,
         onError: onError,
       ),
-      textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
+      textTheme: ThemeData.dark().textTheme,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: primary,
@@ -294,7 +288,7 @@ class FlutcnTheme {
           borderSide: BorderSide(color: error, width: 2),
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: colors['darkMuted']!,
         elevation: 1,
         shape: RoundedRectangleBorder(
@@ -345,13 +339,13 @@ class FlutcnTheme {
         foregroundColor: onBackground,
         elevation: 0,
         centerTitle: false,
-        titleTextStyle: GoogleFonts.inter(
+        titleTextStyle: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w600,
           color: onBackground,
         ),
       ),
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         backgroundColor: background,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(_radiusLarge),

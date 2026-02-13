@@ -45,8 +45,22 @@ export async function generateMetadata(props: {
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
+  const slugPath = params.slug?.join("/") || "";
+  const keywords = slugPath.includes("widgets") 
+    ? ["Flutter widgets", "Flutter UI components", page.data.title, "Flutcn UI"]
+    : slugPath.includes("themes")
+    ? ["Flutter themes", "Flutter dark theme", "Flutcn UI themes"]
+    : ["Flutter", "Flutcn UI", page.data.title];
+
   return {
     title: page.data.title,
     description: page.data.description,
+    keywords,
+    openGraph: {
+      title: `${page.data.title} | Flutcn UI`,
+      description: page.data.description,
+      type: "article",
+      publishedTime: new Date().toISOString(),
+    },
   };
 }

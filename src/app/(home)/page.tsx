@@ -3,15 +3,51 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Flutcn UI - Beautiful Flutter Widgets",
+  description:
+    "A Flutter widgets library inspired by shadcn/ui that helps you build beautiful user interfaces with minimal effort.",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Flutcn UI",
+  description:
+    "A Flutter widgets library inspired by shadcn/ui that helps you build beautiful user interfaces with minimal effort.",
+  url: "https://flutcnui.netlify.app",
+  author: {
+    "@type": "Person",
+    name: "Omar elhassani alaoui",
+  },
+  license: {
+    "@type": "CreativeWork",
+    name: "MIT License",
+  },
+  programmingLanguage: "Flutter",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "iOS, Android, Web",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
 
 export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center min-h-96 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div className="container flex max-w-screen flex-col items-center gap-4 text-center">
         <div
           className={cn(
-            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
           )}
         >
           <Link href="/docs" className="flex items-center gap-1">
@@ -19,7 +55,7 @@ export default function HomePage() {
               🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
               <span
                 className={cn(
-                  `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+                  `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
                 )}
               >
                 Introducing Flutcn UI

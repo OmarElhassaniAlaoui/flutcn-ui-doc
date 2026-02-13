@@ -1,0 +1,84 @@
+---
+title: Color Schemes
+description: Explore the available color palettes for your Flutter app with Flutcn UI - Zinc, Gray, Blue, and Red.
+---
+
+Flutcn UI provides multiple color palettes that you can use in your Flutter applications. Each color scheme is carefully crafted to provide a cohesive look and feel.
+
+## Available Color Palettes
+
+Flutcn UI offers the following color schemes:
+
+| Color Scheme | Description | Use Case |
+|-------------|-------------|----------|
+| Zinc | Neutral gray tones | Clean, modern apps |
+| Gray | Classic gray palette | Professional applications |
+| Blue | Trust and stability | Corporate, tech apps |
+| Red | Bold and energetic | Gaming, creative apps |
+
+## Using Color Schemes
+
+### Fetching a Color Scheme
+
+You can fetch and use a color scheme from the Flutcn API:
+
+```dart
+import 'package:flutcn_ui/flutcn_ui.dart';
+
+void main() async {
+  // Fetch the blue color scheme
+  final palette = await FlutcnAPI.getColorScheme('blue');
+  
+  runApp(MyApp(colors: palette));
+}
+```
+
+### Applying to Theme
+
+```dart
+ThemeData customTheme(AppPalette colors) {
+  return FlutcnTheme.lightTheme().copyWith(
+    colorScheme: ColorScheme(
+      brightness: Brightness.light,
+      primary: colors.primary,
+      onPrimary: colors.onPrimary,
+      secondary: colors.secondary,
+      onSecondary: colors.onSecondary,
+      error: colors.destructive,
+      onError: colors.onDestructive,
+      surface: colors.surface,
+      onSurface: colors.onSurface,
+    ),
+  );
+}
+```
+
+## Customizing Colors
+
+You can override specific colors in any palette:
+
+```dart
+AppPalette customPalette = AppPalette(
+  ...zincPalette,
+  primary: Colors.indigo,
+  onPrimary: Colors.white,
+);
+```
+
+## Switching Color Schemes
+
+To switch between color schemes dynamically:
+
+```dart
+void switchColorScheme(String paletteName) async {
+  final palette = await FlutcnAPI.getColorScheme(paletteName);
+  // Apply to your app's theme
+}
+```
+
+## Best Practices
+
+1. **Consistency**: Use the same color scheme throughout your app
+2. **Accessibility**: Ensure sufficient contrast ratios
+3. **Theme Switching**: Provide both light and dark variants
+4. **Customization**: Override specific colors when needed

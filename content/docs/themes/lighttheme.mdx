@@ -1,0 +1,70 @@
+---
+title: Light Theme
+description: Learn how to apply the default light theme in your Flutter app with Flutcn UI.
+---
+
+## Setup
+
+The light theme provides a clean, modern look for your Flutter applications. It uses a carefully crafted color palette that works well for various use cases.
+
+```dart
+import "./themes/app_theme.dart";
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: FlutcnTheme.lightTheme(), // [!code highlight]
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+```
+
+## Customizing the Light Theme
+
+You can customize the light theme by modifying the `app_theme.dart` file or using the theme API.
+
+### Using Theme Extensions
+
+```dart
+ThemeData customLightTheme() {
+  return FlutcnTheme.lightTheme().copyWith(
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.blue,
+      brightness: Brightness.light,
+    ),
+  );
+}
+```
+
+## Color Palette
+
+The light theme uses the following color scheme:
+
+| Color | Usage |
+|-------|-------|
+| Primary | Main interactive elements |
+| Secondary | Secondary actions |
+| Surface | Card backgrounds |
+| Background | Page background |
+| On Primary | Text on primary color |
+| On Surface | Text on surfaces |
+
+## Switching Between Themes
+
+To switch between light and dark themes dynamically:
+
+```dart
+ThemeModeSwitcher(context, ThemeMode.light); // For light theme
+ThemeModeSwitcher(context, ThemeMode.dark);  // For dark theme
+```
+
+## Note
+
+The light theme is the default theme when you initialize a new Flutcn UI project. You can switch to dark mode at any time using the theme switcher.

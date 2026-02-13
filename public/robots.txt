@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow API routes that aren't useful for indexing
+Disallow: /api/
+Disallow: /registry/
+
+# Sitemap
+Sitemap: https://flutcnui.netlify.app/sitemap.xml

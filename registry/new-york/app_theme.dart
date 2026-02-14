@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './app_pallete.dart';
+import './app_palette.dart';
 
 class FlutcnTheme {
   // Default border radius values

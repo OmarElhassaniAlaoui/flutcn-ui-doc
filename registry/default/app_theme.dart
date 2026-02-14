@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import './app_pallete.dart';
+import './app_palette.dart';
 // Enum for all available color schemes
 
 

@@ -38,7 +38,7 @@ export function ComponentPreview({
     }
   }, [theme]);
 
-  const previewUrl = `/preview/${name}?theme=${theme}`;
+  const previewUrl = `/preview/index.html?widget=${name}&theme=${theme}`;
 
   return (
     <div className="not-prose my-6">

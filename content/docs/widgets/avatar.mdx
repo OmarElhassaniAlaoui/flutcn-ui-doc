@@ -16,98 +16,133 @@ flutcn_ui add avatar
 ```dart title="main.dart"
 import '../widgets/avatar.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),        
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Avatar'),
-        ),
-        body: Center(
-          child: Avatar.sm(
-            imageUrl: 'https://avatars.githubusercontent.com/u/101595?v=4',
-            fallbackText: 'Avatar',
-          ),
-        ),
-      ),
-    );
-  }
-}
+Avatar.md(
+  imageUrl: 'https://avatars.githubusercontent.com/u/101595?v=4',
+  fallbackText: 'User',
+)
 ```
 
 ## Properties
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| imageUrl | String | The URL of the image to display. |
-| fallbackText | String | The fallback text to display if the image is not available. |
-| size | AvatarSize | The size of the avatar. |
-| backgroundColor | Color | The background color of the avatar. |
-| textColor | Color | The text color of the avatar. |
-| textStyle | TextStyle | The text style of the avatar. |
-| borderRadius | BorderRadius | The border radius of the avatar. |
-| shape | BoxShape | The shape of the avatar. |
-| child | Widget | The child widget of the avatar. |
-| borderWidth | double | The border width of the avatar. |
-| borderColor | Color | The border color of the avatar. |
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+| imageUrl | String? | null | URL of the image to display. |
+| fallbackText | String? | null | Text used for the fallback — only the **first letter** is shown (uppercased). |
+| size | AvatarSize | md | Size preset. |
+| customSize | double? | null | Exact size in logical pixels when `size` is `AvatarSize.custom`. |
+| backgroundColor | Color? | primary | Background color shown behind the fallback letter. |
+| textColor | Color? | onPrimary | Color of the fallback letter. |
+| textStyle | TextStyle? | — | Full text style override for the fallback letter. |
+| borderRadius | BorderRadius? | circular(8) | Border radius used when `shape` is `BoxShape.rectangle`. |
+| shape | BoxShape | circle | Shape of the avatar (`BoxShape.circle` or `BoxShape.rectangle`). |
+| child | Widget? | null | Custom child widget. Overrides imageUrl and fallback. |
+| borderWidth | double | 0 | Width of the border stroke. |
+| borderColor | Color | transparent | Color of the border. |
 
 ## Sizes
 
-Avatar provides several sizes of avatars, each with its own appearance and behavior. You can choose the size that best suits your needs.
-
 ### Sm
 
-The sm size is the smallest size of the avatar. It has a width of 24 and a height of 24.
+24×24 pixels. For tight layouts like list items or inline mentions.
+
+```dart title="avatar.dart"
+Avatar.sm(imageUrl: 'https://example.com/avatar.png')
+```
 
 ### Md
 
-The md size is the default size of the avatar. It has a width of 32 and a height of 32.
+32×32 pixels. The default size.
+
+```dart title="avatar.dart"
+Avatar.md(imageUrl: 'https://example.com/avatar.png')
+```
 
 ### Lg
 
-The lg size is the largest size of the avatar. It has a width of 40 and a height of 40.
+40×40 pixels. For comment threads, user cards, and chat UIs.
+
+```dart title="avatar.dart"
+Avatar.lg(imageUrl: 'https://example.com/avatar.png')
+```
 
 ### Xl
 
-The xl size is the extra large size of the avatar. It has a width of 48 and a height of 48.
-
-### Custom       
-
-The custom size allows you to customize the size of the avatar. You can set the width and height to create a unique avatar design.  
+48×48 pixels. For profile headers and prominent user displays.
 
 ```dart title="avatar.dart"
-import 'package:flutter/material.dart';
+Avatar.xl(imageUrl: 'https://example.com/avatar.png')
+```
 
+### Custom
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Avatar'),
-        ),
-        body: Center(
-          child: Avatar.custom(
-            imageUrl: 'https://avatars.githubusercontent.com/u/101595?v=4',
-            fallbackText: 'FL',
-            borderColor: Colors.amberAccent,
-            shape: BoxShape.circle,
-            borderWidth: 2,
-            size: 100,
-          ),
-        ),
-      ),
-    );
-  }
-}
-``` 
+Specify an exact size with `Avatar.custom()`.
+
+```dart title="avatar.dart"
+Avatar.custom(
+  size: 96,
+  imageUrl: 'https://example.com/avatar.png',
+)
+```
+
+## Shapes
+
+### Circle (default)
+
+```dart title="avatar.dart"
+Avatar.md(
+  imageUrl: 'https://example.com/avatar.png',
+  shape: BoxShape.circle,
+)
+```
+
+### Rounded Rectangle
+
+```dart title="avatar.dart"
+Avatar.md(
+  imageUrl: 'https://example.com/avatar.png',
+  shape: BoxShape.rectangle,
+)
+```
+
+## Fallback
+
+When `imageUrl` is null or not provided, the avatar displays the **first letter** of `fallbackText` (uppercased) over a colored background.
+
+```dart title="avatar.dart"
+Avatar.md(
+  fallbackText: 'Omar',   // displays "O"
+  backgroundColor: Colors.indigo,
+  textColor: Colors.white,
+)
+```
+
+## With Border
+
+Add a decorative border using `borderWidth` and `borderColor`.
+
+```dart title="avatar.dart"
+Avatar.custom(
+  size: 80,
+  imageUrl: 'https://example.com/avatar.png',
+  borderWidth: 3,
+  borderColor: Colors.amberAccent,
+)
+```
+
+## Helper Class
+
+The `Avatar` helper class provides named constructors for each size.
+
+```dart title="avatar.dart"
+Avatar.sm(imageUrl: 'https://example.com/avatar.png')
+Avatar.md(imageUrl: 'https://example.com/avatar.png')
+Avatar.lg(imageUrl: 'https://example.com/avatar.png')
+Avatar.xl(imageUrl: 'https://example.com/avatar.png')
+Avatar.custom(
+  size: 80,
+  imageUrl: 'https://example.com/avatar.png',
+  borderWidth: 2,
+  borderColor: Colors.amberAccent,
+  shape: BoxShape.circle,
+)
+```

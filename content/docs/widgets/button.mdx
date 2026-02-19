@@ -1,6 +1,6 @@
 ---
 title: Button
-description:  Displays a button or a widget that looks like a button.
+description: Displays a button or a widget that looks like a button.
 ---
 
 <ComponentPreview name="button" height={500} />
@@ -16,128 +16,297 @@ flutcn_ui add button
 ```dart title="main.dart"
 import '../widgets/button.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Button'),
-        ),
-        body: Center(
-          child: Button.primary(
-          height: 60,
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: const Text('primary'),
-          onPressed: () {},
-          ),
-        ),
-      ),
-    );
-  }
-}
+Button.primary(
+  text: 'Click me',
+  onPressed: () {},
+)
 ```
 
 ## Properties
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| text | String | The text to display on the button. |
-| onPressed | Function | The function to call when the button is pressed. |
-| variant | ButtonVariant | The variant of the button. |
-| leadingIcon | Widget | The leading icon of the button. |
-| trailingIcon | Widget | The trailing icon of the button. |
-| isDisabled | bool | Whether the button is disabled. |
-| isLoading | bool | Whether the button is loading. |
-| height | double | The height of the button. |
-| width | double | The width of the button. |
-| padding | EdgeInsets | The padding of the button. |
-| borderRadius | double | The border radius of the button. |
-| elevation | double | The elevation of the button. |
-| hoverElevation | double | The hover elevation of the button. |
-| pressedElevation | double | The pressed elevation of the button. |
-| disabledElevation | double | The disabled elevation of the button. |
-| borderColor | Color | The border color of the button. |
-| borderWidth | double | The border width of the button. |
-| backgroundColor | Color | The background color of the button. |
-| foregroundColor | Color | The foreground color of the button. |
-| hoverBackgroundColor | Color | The hover background color of the button. |
-| pressedBackgroundColor | Color | The pressed background color of the button. |
-| disabledBackgroundColor | Color | The disabled background color of the button. |
-| disabledForegroundColor | Color | The disabled foreground color of the button. |
-| loadingIndicatorColor | Color | The loading indicator color of the button. |
-| fontSize | double | The font size of the button. |
-| fontWeight | FontWeight | The font weight of the button. |
-| animationDuration | Duration | The animation duration of the button. |
-| animationCurve | Curve | The animation curve of the button. |
-| shape | BoxShape | The shape of the button. |
-| gradient | Gradient | The gradient of the button. |
-| boxShadow | | The box shadow of the button. |
-| loadingSize | double | The loading size of the button. |
-| overlayColor | Color | The overlay color of the button. |
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+| text | String? | null | Label text displayed on the button. |
+| icon | IconData? | null | Leading icon displayed before the text. |
+| onPressed | VoidCallback? | null | Callback triggered on tap. Pass null to disable. |
+| variant | ButtonVariant | primary | Style variant of the button. |
+| size | ButtonSize | md | Size preset controlling height, padding, and font size. |
+| isLoading | bool | false | When true, replaces content with a circular spinner. |
+| isDisabled | bool | false | When true, disables interaction and dims the button. |
+| iconOnly | bool | false | When true, renders only the icon without text. |
+| child | Widget? | null | Custom child widget. Overrides text and icon. |
+| backgroundColor | Color? | — | Override the background color. |
+| foregroundColor | Color? | — | Override the text and icon color. |
+| hoverBackgroundColor | Color? | — | Background color on hover. |
+| pressedBackgroundColor | Color? | — | Background color on press. |
+| disabledBackgroundColor | Color? | — | Background color when disabled. |
+| disabledForegroundColor | Color? | — | Text color when disabled. |
+| loadingIndicatorColor | Color? | — | Color of the loading spinner. |
+| borderColor | Color? | — | Border color (effective with outline or custom variant). |
+| borderWidth | double? | — | Border stroke width. |
+| elevation | double? | 0 | Shadow elevation. |
+| hoverElevation | double? | — | Elevation on hover. |
+| pressedElevation | double? | — | Elevation on press. |
+| disabledElevation | double? | — | Elevation when disabled. |
+| borderRadius | double? | 8.0 | Corner radius in logical pixels. |
+| width | double? | — | Fixed width. |
+| height | double? | — | Fixed height. |
+| minWidth | double? | — | Minimum width. |
+| minHeight | double? | — | Minimum height. |
+| fontSize | double? | — | Font size of the label text. |
+| iconSize | double? | — | Size of the icon. |
+| fontWeight | FontWeight? | w600 | Font weight of the label text. |
+| padding | EdgeInsetsGeometry? | — | Inner padding override. |
+| animationDuration | Duration? | 200ms | Duration of the press animation. |
+| animationCurve | Curve? | easeInOut | Curve of the press animation. |
+| shape | BoxShape? | — | Set to `BoxShape.circle` for a circular button. |
+| gradient | Gradient? | — | Gradient fill (only applied in custom variant). |
+| boxShadow | List\<BoxShadow\>? | — | Custom box shadow (only applied in custom variant). |
+| loadingSize | double? | — | Size of the loading spinner. |
+| overlayColor | Color? | — | Ripple/overlay color on interaction. |
+| contentAlignment | MainAxisAlignment? | center | Alignment of the row containing icon and text. |
+| textStyle | TextStyle? | — | Full text style override. |
 
 ## Variants
 
-FlutButton provides several variants of buttons, each with its own appearance and behavior. You can choose the variant that best suits your needs.
+FlutButton provides several variants. Choose the one that best communicates the intent of the action.
 
 ### Primary
 
-The primary variant is the default variant of the button. It has a background color, a foreground color, and a border color. It is typically used for the most important or the most common action.
+The default variant. Use for the most important action on a screen.
+
+```dart title="button.dart"
+Button.primary(
+  text: 'Get Started',
+  onPressed: () {},
+)
+```
 
 ### Secondary
 
-The secondary variant has a background color, a foreground color, and a border color. It is typically used for less important or less common actions.
+Use for secondary or supporting actions alongside a primary button.
+
+```dart title="button.dart"
+Button.secondary(
+  text: 'Cancel',
+  onPressed: () {},
+)
+```
 
 ### Outline
 
-The outline variant has a background color, a foreground color, and a border color. It is typically used for less important or less common actions.
+A bordered button with a transparent background. Use for less prominent actions.
+
+```dart title="button.dart"
+Button.outline(
+  text: 'Learn More',
+  onPressed: () {},
+)
+```
 
 ### Ghost
 
-The ghost variant has a background color, a foreground color, and a border color. It is typically used for less important or less common actions.
+No background or border. Useful for toolbar actions and inline controls.
+
+```dart title="button.dart"
+Button.ghost(
+  text: 'Edit',
+  onPressed: () {},
+)
+```
 
 ### Link
 
-The link variant has a background color, a foreground color, and a border color. It is typically used for less important or less common actions.
+Styled like a hyperlink with an underline. Use for navigational actions.
+
+```dart title="button.dart"
+Button.link(
+  text: 'View docs',
+  onPressed: () {},
+)
+```
 
 ### Destructive
 
-The destructive variant has a background color, a foreground color, and a border color. It is typically used for less important or less common actions.
+Red-toned button for irreversible actions like deleting or removing.
+
+```dart title="button.dart"
+Button.destructive(
+  text: 'Delete account',
+  onPressed: () {},
+)
+```
 
 ### Custom
 
-The custom variant allows you to customize the appearance and behavior of the button. You can set the background color, foreground color, border color, and other properties to create a unique button design.
+Full control over colors, shape, gradient, and shadows.
+
+```dart title="button.dart"
+Button.custom(
+  text: 'Custom',
+  backgroundColor: Colors.teal,
+  foregroundColor: Colors.white,
+  borderRadius: 20,
+  onPressed: () {},
+)
+```
 
 ## Sizes
 
-FlutButton provides several sizes of buttons, each with its own appearance and behavior. You can choose the size that best suits your needs.
-
 ### Sm
 
-The sm size is the smallest size of the button. It has a height of 32 and a font size of 14.
+Height of 32, font size 14. For compact UIs or inline actions.
+
+```dart title="button.dart"
+Button.primary(
+  text: 'Small',
+  size: ButtonSize.sm,
+  onPressed: () {},
+)
+```
 
 ### Md
 
-The md size is the default size of the button. It has a height of 40 and a font size of 16.
+Height of 40, font size 16. The default size.
+
+```dart title="button.dart"
+Button.primary(
+  text: 'Medium',
+  size: ButtonSize.md,
+  onPressed: () {},
+)
+```
 
 ### Lg
 
-The lg size is the largest size of the button. It has a height of 48 and a font size of 18.
+Height of 48, font size 18. For prominent call-to-action buttons.
+
+```dart title="button.dart"
+Button.primary(
+  text: 'Large',
+  size: ButtonSize.lg,
+  onPressed: () {},
+)
+```
 
 ### Icon
 
-The icon size is the size of the button when it only contains an icon. It has a height of 40 and a font size of 16.
+Square button at 40×40, designed for icon-only buttons.
+
+```dart title="button.dart"
+Button.icon(
+  icon: Icons.search,
+  onPressed: () {},
+)
+```
 
 ### Custom
 
-The custom size allows you to customize the size of the button. You can set the height and font size to create a unique button design.
+Fully control the height, width, font size, and padding.
 
+```dart title="button.dart"
+Button.custom(
+  text: 'Custom size',
+  height: 56,
+  width: 200,
+  fontSize: 20,
+  onPressed: () {},
+)
+```
 
+## With Icons
 
+Add a leading icon alongside text using the `icon` parameter.
 
+```dart title="button.dart"
+Button.primary(
+  text: 'Save',
+  icon: Icons.save,
+  onPressed: () {},
+)
+```
 
+For icon-only buttons, use `Button.icon()`:
 
+```dart title="button.dart"
+Button.icon(
+  icon: Icons.settings,
+  onPressed: () {},
+)
+```
+
+## Loading State
+
+Set `isLoading: true` to replace the button content with a spinner. The button remains non-interactive while loading.
+
+```dart title="button.dart"
+Button.primary(
+  text: 'Submitting...',
+  isLoading: true,
+  onPressed: () {},
+)
+```
+
+## Disabled State
+
+Set `isDisabled: true` to prevent interaction. The button appears dimmed.
+
+```dart title="button.dart"
+Button.primary(
+  text: 'Not available',
+  isDisabled: true,
+  onPressed: () {},
+)
+```
+
+## Gradient Button
+
+Use `Button.gradient()` to apply a linear or radial gradient fill.
+
+```dart title="button.dart"
+Button.gradient(
+  text: 'Get Premium',
+  gradient: LinearGradient(
+    colors: [Colors.purple, Colors.blue],
+  ),
+  onPressed: () {},
+)
+```
+
+## Circular Button
+
+Use `Button.circular()` for a perfectly round icon button.
+
+```dart title="button.dart"
+Button.circular(
+  icon: Icons.add,
+  size: 56,
+  onPressed: () {},
+)
+```
+
+## Helper Class
+
+The `Button` helper class provides named constructors for each variant and style combination.
+
+```dart title="button.dart"
+Button.primary(text: 'Primary', onPressed: () {})
+Button.secondary(text: 'Secondary', onPressed: () {})
+Button.outline(text: 'Outline', onPressed: () {})
+Button.ghost(text: 'Ghost', onPressed: () {})
+Button.link(text: 'Link', onPressed: () {})
+Button.destructive(text: 'Delete', onPressed: () {})
+Button.icon(icon: Icons.settings, onPressed: () {})
+Button.gradient(
+  text: 'Gradient',
+  gradient: LinearGradient(colors: [Colors.pink, Colors.orange]),
+  onPressed: () {},
+)
+Button.circular(icon: Icons.add, size: 50, onPressed: () {})
+Button.custom(
+  text: 'Custom',
+  backgroundColor: Colors.teal,
+  foregroundColor: Colors.white,
+  onPressed: () {},
+)
+```
